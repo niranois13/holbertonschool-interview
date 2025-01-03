@@ -27,11 +27,11 @@ You are given a list of `n` lockboxes numbered from `0` to `n - 1`. Each lockbox
 - Your goal is to determine if it is possible to unlock all the lockboxes.
 
 ## Input Format
-- A list of lists `lockboxes`, where each inner list represents the keys contained in a particular lockbox.
+- A list of lists `boxes`, where each inner list represents the keys contained in a particular lockbox.
 
 ### Example Input:
 ```python
-lockboxes = [[1], [2], [3], []]
+boxes = [[1], [2], [3], []]
 ```
 
 ## Output Format
