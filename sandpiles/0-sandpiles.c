@@ -61,23 +61,42 @@ int is_stable(int grid1[3][3])
 void topple(int grid1[3][3])
 {
 	int i = 0, j = 0;
+	int temp[3][3] = {
+		{0, 0, 0},
+		{0, 0, 0},
+		{0, 0, 0}
+	};
 
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			temp[i][j] = grid1[i][j];
+		}
+	}
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
 		{
 			if (grid1[i][j] > 3)
 			{
-				grid1[i][j] -= 4;
+				temp[i][j] -= 4;
 				if (i > 0)
-					grid1[i - 1][j] += 1;
+					temp[i - 1][j] += 1;
 				if (i < 2)
-					grid1[i + 1][j] += 1;
+					temp[i + 1][j] += 1;
 				if (j < 2)
-					grid1[i][j + 1] += 1;
+					temp[i][j + 1] += 1;
 				if (j > 0)
-				grid1[i][j - 1] += 1;
+				temp[i][j - 1] += 1;
 			}
+		}
+	}
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			grid1[i][j] = temp[i][j];
 		}
 	}
 }
