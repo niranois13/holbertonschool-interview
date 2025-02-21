@@ -1,6 +1,7 @@
 # Linked List Palindrome
 
 ![linked list palindrome](https://i.imgur.com/Ws4MoDI.png)
+
 ## Overview
 
 A Linked List Palindrome problem involves determining whether a given singly reads the same forward and backward. This is similar to checking if a string is a palindrome, but with the added complexity of a linked list's structure.
