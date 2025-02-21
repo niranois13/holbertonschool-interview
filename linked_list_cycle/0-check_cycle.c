@@ -19,7 +19,7 @@ int check_cycle(listint_t *list)
     while(hare)
     {
         if (hare->next)
-            hare = heare->next->next;
+            hare = hare->next->next;
         else
             hare = hare->next;
 
@@ -28,6 +28,6 @@ int check_cycle(listint_t *list)
         if (tortoise == hare)
             return (1);
     }
-    
+
     return (0);
 }
