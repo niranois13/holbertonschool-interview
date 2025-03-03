@@ -10,10 +10,9 @@ def validUTF8(data):
     :param data: list of int - the list to be checked
     Returns: True if valid UTF-8, False otherwise
     """
+    is_valid = True
     try:
         bytes(data).decode('utf-8')
-        return True
-    except UnicodeDecodeError:
-        return False
-    except ValueError:
-        return False
+    except Exception:
+        is_valid = False
+    return is_valid
