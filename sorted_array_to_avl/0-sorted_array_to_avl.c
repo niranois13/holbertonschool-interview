@@ -27,12 +27,12 @@ avl_t *create_avl_node(avl_t *parent, int index, int *array)
 }
 
 /**
-* sorted_array_to_avl_tree - Builds an AVL tree from a sorted array.
-*
-* @array: A pointer to the sorted array to convert into an AVL tree.
-* @size: The size of the array.
-*
-* Return: Pointer to root of the newly created AVL tree, NULL on failure.
+ * sorted_array_to_avl_tree - Builds an AVL tree from a sorted array.
+ *
+ * @array: A pointer to the sorted array to convert into an AVL tree.
+ * @size: The size of the array.
+ *
+ * Return: Pointer to root of the newly created AVL tree, NULL on failure.
 */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
@@ -46,14 +46,14 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 }
 
 /**
-* avl_from_sortd_arr - Recursively builds an AVL tree from a sorted array.
-*
-* @array: The sorted array used to construct the AVL tree.
-* @start: The starting index of the current subarray.
-* @end: The ending index of the current subarray.
-* @parent: The parent node for the current subtree.
-*
-* Return: A pointer to the root of the current subtree, or NULL on failure.
+ * avl_from_sortd_arr - Recursively builds an AVL tree from a sorted array.
+ *
+ * @array: The sorted array used to construct the AVL tree.
+ * @start: The starting index of the current subarray.
+ * @end: The ending index of the current subarray.
+ * @parent: The parent node for the current subtree.
+ *
+ * Return: A pointer to the root of the current subtree, or NULL on failure.
 */
 avl_t *avl_from_sortd_arr(int *array, size_t start, size_t end, avl_t *parent)
 {
