@@ -27,7 +27,7 @@ avl_t *create_avl_node(avl_t *parent, int index, int *array)
 }
 
 /**
- * sorted_array_to_avl_tree - Builds an AVL tree from a sorted array.
+ * sorted_array_to_avl - Builds an AVL tree from a sorted array.
  *
  * @array: A pointer to the sorted array to convert into an AVL tree.
  * @size: The size of the array.
