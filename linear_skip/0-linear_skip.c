@@ -1,46 +1,52 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "search.h"
 
 /**
- * linear_skip - Searches for a value in a skip list
+ * linear_skip - searches for a value in a sorted skip list of integers
+ * @list: pointer to the head of the skip list to search in
+ * @value: value to search for
  *
- * @head: Pointer to the head of the skip list
- * @value: Value to search for
- *
- * Return: Pointer to the node where value is located, or NULL if not found
+ * Return: Pointer on the first node where value is located or NULL
  */
-skiplist_t *linear_skip(skiplist_t *head, int value)
+skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	skiplist_t *node = head;
-	skiplist_t *express_node;
+	size_t i;
+	skiplist_t *node_pos, *node_min;
 
-	if (head == NULL)
+	if (!list)
 		return (NULL);
 
-	while (node)
-	{
-		express_node = node->express;
+	node_pos = list, node_min = list;
 
-		if (express_node && express_node->n <= value)
+	while (node_pos && node_pos->next && (node_pos->n) < value)
+	{
+		node_min = node_pos;
+
+		if (node_pos->express)
 		{
-			printf("Value checked at index[%lu] = [%d]\n", node->index, node->n);
-			node = express_node;
+			node_pos = node_pos->express;
+
+			printf("Value checked at index [%lu] = [%d]\n",
+					node_pos->index, node_pos->n);
 		}
 		else
-		{
-			printf("Value checked at index[%lu] = [%d]\n", node->index, node->n);
-			break;
-		}
+			while (node_pos->next)
+				node_pos = node_pos->next;
 	}
 
-	while (node && node->n <= value)
+	printf("Value found between indexes [%lu] and [%lu]\n",
+			node_min->index, node_pos->index);
+
+	for (i = node_min->index;
+			i <= (node_pos->index) && (node_min->n <= value);
+			i++, node_min = node_min->next)
 	{
-		printf("Value checked at index[%lu] = [%d]\n", node->index, node->n);
-		if (node->n == value)
-			return (node);
-		node = node->next;
+		printf("Value checked at index [%lu] = [%d]\n", i, node_min->n);
+		if (node_min && (node_min->n) == value)
+			return (node_min);
 	}
+
+	if (node_min)
+		printf("Value checked at index [%lu] = [%d]\n", i, node_min->n);
 
 	return (NULL);
 }
