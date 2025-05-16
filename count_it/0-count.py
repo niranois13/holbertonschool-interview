@@ -63,5 +63,7 @@ def count_words(subreddit, word_list, kw_cont=None, after=None):
             print(f"{key}: {count}")
         sort_and_print(items, index + 1)
 
-    sorted_items = sorted(kw_cont.items(), key=lambda x: (-x[1], x[0]))
-    sort_and_print(sorted_items)
+        sorted_abc = sorted(kw_cont.items(), key=lambda x: (-x[1], x[0]))
+        sorted_res = sorted(sorted_abc, key=lambda x: (-x[1], x[0]))
+
+        sort_and_print(sorted_res)
