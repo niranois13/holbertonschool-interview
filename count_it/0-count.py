@@ -3,8 +3,8 @@
 Count it!
 """
 
-import requests
 import re
+import requests
 
 
 def count_words(subreddit, word_list, kw_cont=None, after=None):
