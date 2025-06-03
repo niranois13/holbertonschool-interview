@@ -1,27 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
-
-/**
- * check_cycle - checks if a singly linked list has a cycle in it.
- * @list: ptr head of list
- * Return: 0 if no cycle, position of contact if cycle
- */
-listint_t *check_cycle(listint_t *list)
-{
-	listint_t *hare = list->next;
-	listint_t *tortoise = list;
-
-	while (hare && hare->next)
-	{
-		hare = hare->next->next;
-		tortoise = tortoise->next;
-
-		if (tortoise == hare)
-			return (hare);
-	}
-
-	return (NULL);
-}
 
 
 /**
@@ -36,20 +13,27 @@ listint_t *check_cycle(listint_t *list)
 listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *tortoise = head;
-	listint_t *hare = check_cycle(head);
+	listint_t *hare = head->next;
 
 	if (!hare)
 		return (NULL);
 
-
-	while (tortoise != hare)
+	while (hare && hare->next)
 	{
-		if (!tortoise || !hare)
-			return (NULL);
-		
-		hare = hare->next;
+		hare = hare->next->next;
 		tortoise = tortoise->next;
-	};
 
-	return (tortoise);
+		if (tortoise == hare)
+		{
+			tortoise = head;
+
+			while (tortoise != hare)
+			{
+				hare = hare->next;
+				tortoise = tortoise->next;
+			}
+			return (tortoise);
+		}
+	}
+	return (NULL);
 }
