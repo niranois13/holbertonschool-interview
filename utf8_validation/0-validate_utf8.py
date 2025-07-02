@@ -15,4 +15,5 @@ def validUTF8(data):
         bytes(data).decode('utf-8')
     except Exception:
         is_valid = False
+
     return is_valid

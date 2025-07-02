@@ -12,6 +12,8 @@ This repo is a part of __Holberton School__. It will contain many _algorithmic_ 
     - [5. Linked list palindrome](#5-linked-list-palindrome)
     - [6. Log parsing](#6-log-parsing)
     - [7. Linked list cycle](#7-linked-list-cycle)
+    - [8. Palindrome integer](#8-palindrome-integer)
+    - [9. UTF-8 validation](#9-utf-8-validation)
   - [Tech Stack](#tech-stack)
     - [1. Python](#1-python)
     - [2. C](#2-c)
@@ -25,6 +27,8 @@ This repo is a part of __Holberton School__. It will contain many _algorithmic_ 
 ### 5. Linked list palindrome
 ### 6. Log parsing
 ### 7. Linked list cycle
+### 8. Palindrome integer
+### 9. UTF-8 validation
 
 ## Tech Stack
 
