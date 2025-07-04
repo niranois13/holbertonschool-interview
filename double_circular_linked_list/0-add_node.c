@@ -20,7 +20,7 @@ List *add_node_end(List **list, char *str)
 
 	new_node->str = str;
 
-	if (*list == NULL)
+	if (list == NULL)
 	{
 		new_node->prev = new_node;
 		new_node->next = new_node;
@@ -57,7 +57,7 @@ List *add_node_begin(List **list, char *str)
 
 	new_node->str = str;
 
-	if (*list == NULL)
+	if (list == NULL)
 	{
 		new_node->prev = new_node;
 		new_node->next = new_node;
