@@ -52,5 +52,25 @@ int main(void)
 
 	printf("Added to the beginning:\n");
 	print_list(list);
+
+		printf("\n=== Edge Case Tests ===\n");
+
+	/* Liste vide */
+	printf("Empty list:\n");
+	print_list(NULL); /* Doit n’afficher rien et ne pas planter */
+
+	/* Liste avec 1 seul nœud */
+	List *list_one = NULL;
+	add_node_end(&list_one, "Unique");
+	printf("\nOne-node list:\n");
+	print_list(list_one);
+
+	/* Liste avec 2 nœuds */
+	List *list_two = NULL;
+	add_node_begin(&list_two, "Second");
+	add_node_begin(&list_two, "First");
+	printf("\nTwo-node list:\n");
+	print_list(list_two);
+
 	return (0);
 }

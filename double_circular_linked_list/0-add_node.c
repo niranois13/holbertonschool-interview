@@ -83,5 +83,7 @@ List *add_node_begin(List **list, char *str)
 	(*list)->prev = new_node;
 	last_node->next = new_node;
 
+	*list = new_node;
+
 	return (new_node);
 }
