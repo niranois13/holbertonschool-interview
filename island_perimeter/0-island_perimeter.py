@@ -5,6 +5,7 @@
 
 
 def island_perimeter(grid):
+    """Finds perimeter of an island"""
     perimeter = 0
 
     if not grid or len(grid) == 0:
