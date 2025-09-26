@@ -10,18 +10,10 @@ def sieve(max_n):
                 is_prime[j] = False
     return is_prime
 
+
 def isWinner(x, nums):
     """
     Determines the winner of the Prime Game.
-    
-    Args:
-        x (int): number of rounds
-        nums (list): list of n values for each round
-    
-    Returns:
-        str: "Maria" if Maria wins more rounds,
-            "Ben" if Ben wins more rounds,
-            None if no winner can be determined
     """
     if x == 0 or not nums:
         return None
@@ -38,11 +30,15 @@ def isWinner(x, nums):
     Ben_wins = 0
 
     for n in nums:
+        if n < 2:
+            continue  # No moves possible, skip round
         if prime_count[n] % 2 != 0:
             Maria_wins += 1
         else:
             Ben_wins += 1
 
+    if Maria_wins == 0 and Ben_wins == 0:
+        return None
     if Maria_wins > Ben_wins:
         return "Maria"
     if Ben_wins > Maria_wins:
