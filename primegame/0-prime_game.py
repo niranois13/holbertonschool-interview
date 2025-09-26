@@ -12,16 +12,13 @@ def sieve(max_n):
 
 
 def isWinner(x, nums):
-    """
-    Determines the winner of the Prime Game.
-    """
+    """ Determines the winner of the Prime Game """
     if x == 0 or not nums:
         return None
 
     max_n = max(nums)
     primes = sieve(max_n)
 
-    # Precompute number of primes ≤ n for all n
     prime_count = [0] * (max_n + 1)
     for i in range(1, max_n + 1):
         prime_count[i] = prime_count[i - 1] + (1 if primes[i] else 0)
@@ -31,14 +28,12 @@ def isWinner(x, nums):
 
     for n in nums:
         if n < 2:
-            continue  # No moves possible, skip round
-        if prime_count[n] % 2 != 0:
+            Ben_wins += 1
+        elif prime_count[n] % 2 != 0:
             Maria_wins += 1
         else:
             Ben_wins += 1
 
-    if Maria_wins == 0 and Ben_wins == 0:
-        return None
     if Maria_wins > Ben_wins:
         return "Maria"
     if Ben_wins > Maria_wins:
